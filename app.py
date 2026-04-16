@@ -14,7 +14,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 from dash import Dash, Input, Output, dcc, html
 
-MASTER = Path("data/master_revenue.csv")
+# Look for the CSV in the usual place (data/) first, then fall back to
+# the repo root. The root fallback covers cases where the file was
+# uploaded without preserving folder structure (e.g., github.com web UI
+# when dragging individual files instead of a folder).
+_CANDIDATES = [Path("data/master_revenue.csv"), Path("master_revenue.csv")]
+MASTER = next((p for p in _CANDIDATES if p.exists()), _CANDIDATES[0])
 
 # Census 2011; AP/Telangana post-2014 bifurcation figures.
 POPULATION = {
