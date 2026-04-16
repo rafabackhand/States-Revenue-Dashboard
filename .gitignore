@@ -1,0 +1,18 @@
+# Python virtual environment (rebuild in each location; never upload)
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS metadata junk
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Local env overrides
+.env

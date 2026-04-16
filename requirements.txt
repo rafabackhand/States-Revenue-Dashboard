@@ -1,0 +1,4 @@
+dash>=3.0,<5.0
+pandas>=2.0,<3.0
+plotly>=5.0,<7.0
+gunicorn>=21.0
